@@ -1,0 +1,209 @@
+:root {
+  --color-primary: #667C99;      /* updated background color */
+  --color-accent: #B0C4B1;
+  --color-light: #FFFFFF;
+  --color-dark: #2E3A40;
+  --radius: 24px;
+  --spacing: 16px;
+  --font-sans: "Poppins", sans-serif;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+header.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Use your brand colors */
+.bg-info {
+  background-color: var(--color-accent) !important;
+}
+.navbar-light .navbar-nav .nav-link {
+  color: var(--color-dark) !important;
+}
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active {
+  color: var(--color-primary) !important;
+}
+
+/* Increase dropdown contrast */
+.dropdown-menu {
+  background: var(--color-light);
+}
+.dropdown-item {
+  color: var(--color-dark);
+}
+.dropdown-item:hover {
+  background: var(--color-accent);
+  color: var(--color-dark);
+}
+
+/* Right-side icons spacing */
+.navbar-nav .nav-link i {
+  font-size: 1.25rem;
+}
+
+/* brand colors */
+.bg-info { background-color: var(--color-accent) !important; }
+.bg-light { background-color: #f8f9fa !important; }
+
+/* breadcrumb */
+.breadcrumb a { text-decoration: none; color: var(--color-dark); }
+.breadcrumb .active { color: var(--color-primary); }
+
+/* hero banner rounding */
+.hero-banner { border-radius: var(--radius); overflow: hidden; }
+
+/* card styling */
+.card { border: none; border-radius: var(--radius); }
+.card-img-top { border-top-left-radius: var(--radius); border-top-right-radius: var(--radius); }
+
+/* refine toolbar */
+.bg-secondary { background-color: #e9ecef !important; }
+
+/* adjust spacing */
+.container { max-width: 1140px; }
+
+.container {
+  max-width: 480px;
+  /* … */
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-primary);
+  color: var(--color-dark);
+}
+/* Components with primary background */
+.container {
+  max-width: 480px;
+  width: 100%;
+  margin: 0 auto;    /* horizontally center */
+  padding: 0 1rem;   /* small side padding on mobile */
+}
+
+/* Left panel background */
+.left-panel {
+  background: var(--color-dark);
+}
+/* Toggle buttons */
+.btn-toggle .toggle-btn {
+  border-radius: var(--radius) !important;
+  padding: 0.25rem 1.5rem;
+  border: none;
+  color: var(--color-light);
+}
+.btn-toggle .toggle-btn.active,
+.btn-toggle .toggle-btn:hover {
+  background: var(--color-accent);
+  color: var(--color-dark);
+}
+/* Offset right panel image */
+.object-fit-cover {
+  object-fit: cover;
+}
+
+.footer-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  background: var(--color-primary);
+  box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+}
+
+.footer-link {
+  flex: 1;
+  text-align: center;
+  padding: 12px 0;
+  font-size: 1.5rem;         /* icon size */
+  color: var(--color-light);
+  text-decoration: none;
+}
+
+.footer-link:active,
+.footer-link:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+
+/* size your ship art */
+.ship-art {
+  max-width: 300px;      /* or whatever width matches your mockup */
+  height: auto;
+}
+
+/* make sure the container is centered and capped */
+.container {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.rounded-top-4,
+.card {
+  background: var(--color-primary) !important;
+}
+.navbar,
+.footer-nav {
+  background: var(--color-primary) !important;
+}
+/* Buttons */
+.btn-primary {
+  background: var(--color-accent) !important;
+  border-color: var(--color-accent) !important;
+  color: var(--color-dark) !important;
+  border-radius: var(--radius) !important;
+}
+
+.btn-accent {
+  background: var(--color-accent);
+  color: var(--color-dark);
+  border: none;
+}
+.btn-accent:focus, .btn-accent:hover {
+  background: darken(var(--color-accent), 5%);
+  color: var(--color-dark);
+}
+
+.btn-secondary {
+  background: #fff !important;
+  color: var(--color-dark) !important;
+  border: 1px solid var(--color-accent) !important;
+  border-radius: var(--radius) !important;
+}
+/* Inputs */
+.form-control {
+  border-radius: var(--radius) !important;
+  border: 1px solid var(--color-accent) !important;
+  background: var(--color-light) !important;
+}
+/* Cards */
+.card {
+  border-radius: var(--radius) !important;
+  color: var(--color-light) !important;
+}
+.card img {
+  border-radius: var(--radius) !important;
+}
+/* Tabs, checkout, cart items with rounded edges */
+.tabs .btn,
+.checkout,
+.cart-item {
+  border-radius: var(--radius) !important;
+}
+
+.product-img {
+  width: 200px;       /* set your desired width */
+  height: 120px;      /* set your desired height */
+  object-fit: cover;  /* or 'contain' if you want the whole image */
+  margin: 0 auto;     /* center within the card if needed */
+  display: block;
+  border-radius: var(--radius);
+}

@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DirectCatch – Shop</title>
+
+  <!-- Bootstrap CSS + Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"/>
+
+  <!-- Your Custom Styles -->
+  <link rel="stylesheet" href="style.css"/>
+
+  <!-- Poppins Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+
+  <style>
+    /* Carousel background + overlay */
+    .carousel-bg {
+      position: relative;
+      background: url('images/underwater.jpg') center/cover no-repeat;
+    }
+    .carousel-bg::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(102,124,153,0.7); /* semi‑opaque layer */
+      z-index: 1;
+    }
+    .carousel-bg .container,
+    .carousel-bg .carousel-inner {
+      position: relative;
+      z-index: 2;
+    }
+    .carousel-img {
+      height: 300px;
+      object-fit: cover;
+    }
+  </style>
+</head>
+
+<body class="bg-white text-dark">
+
+  <!-- HEADER / TOP NAV -->
+  <header class="navbar navbar-expand-lg navbar-light bg-info py-2 sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/Logo.png" alt="DirectCatch" style="height:100px;">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#mainNav" aria-controls="mainNav"
+              aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav me-auto">
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-dark" href="#" id="productsDropdown"
+               role="button" data-bs-toggle="dropdown">Products</a>
+            <ul class="dropdown-menu" aria-labelledby="productsDropdown">
+              <li><a class="dropdown-item" href="#">Fresh catch</a></li>
+              <li><a class="dropdown-item" href="#">Frozen</a></li>
+            </ul>
+          </li>
+          <ul class="navbar-nav align-items-center">
+  <!-- Lazada logo link -->
+  <li class="nav-item me-3">
+    <a class="nav-link p-0" 
+       href="https://www.lazada.com.my" 
+       target="_blank" 
+       rel="noopener noreferrer">
+      <img src="images/lazada-logo.png" 
+           alt="Lazada" 
+           style="height:50px;">
+    </a>
+  </li>
+
+  <!-- Shopee logo link -->
+  <li class="nav-item">
+    <a class="nav-link p-0" 
+       href="https://shopee.com.my" 
+       target="_blank" 
+       rel="noopener noreferrer">
+      <img src="images/shopee-logo.png" 
+           alt="Shopee" 
+           style="height:50px;">
+    </a>
+  </li>
+</ul>
+        </ul>
+
+        
+        <ul class="navbar-nav">
+          <li class="nav-item me-3"><a class="nav-link text-dark" href="#"><i class="bi bi-search"></i></a></li>
+          <li class="nav-item me-3"><a class="nav-link text-dark" href="cart.html"><i class="bi bi-cart"></i></a></li>
+          <li class="nav-item"><a class="nav-link text-dark" href="profile.html"><i class="bi bi-person"></i></a></li>
+        </ul>
+      
+      </div>
+    </div>
+  </header>
+<div class="container-fluid"> <h1 class="text-center mb-4">Today's Catches</h1></div>
+  <!-- TODAY'S CATCHES ON CUSTOM BACKGROUND -->
+  <section class="carousel-bg text-light py-4">
+    <div class="container-fluid">
+      <div id="todaysCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+
+          <!-- Slide 1 -->
+          <div class="carousel-item active">
+            <div class="row gx-2">
+              <div class="col-4">
+                <img src="images/Prussian Carp.jpg" class="d-block w-100 carousel-img" alt="Prussian Carp">
+              </div>
+              <div class="col-4">
+                <img src="images/salmon.jpg" class="d-block w-100 carousel-img" alt="Salmon">
+              </div>
+              <div class="col-4">
+                <img src="images/Sea Bass.jpg" class="d-block w-100 carousel-img" alt="Sea Bass">
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="carousel-item">
+            <div class="row gx-2">
+              <div class="col-4">
+                <img src="images/Tilapia.jpg" class="d-block w-100 carousel-img" alt="Tilapia">
+              </div>
+              <div class="col-4">
+                <img src="images/smoke carp.jpeg" class="d-block w-100 carousel-img" alt="Smoke Carp">
+              </div>
+              <div class="col-4">
+                <img src="images/Cod.jpeg" class="d-block w-100 carousel-img" alt="Another Fish">
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#todaysCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#todaysCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- REFINE SEARCH BAR -->
+  <section class="bg-secondary bg-opacity-25 py-3">
+    <div class="container-fluid">
+      <div class="flex-grow-1">
+        <input type="text" class="form-control rounded-pill" placeholder="Search">
+      </div>
+      <div>🚚 Delivery: <strong>KL</strong></div>
+      <div class="btn-group" role="group" aria-label="Filter">
+        <button class="btn btn-outline-dark">All</button>
+        <button class="btn btn-outline-dark">Fresh catch</button>
+        <button class="btn btn-outline-dark">Frozen</button>
+      </div>
+    </div>
+  </section>
+
+<section class="py-4">
+  <div class="container-fluid">
+    <h2 class="mb-4">Today Catches</h2>
+    <div class="row g-4">
+      <!-- repeat for each product: -->
+        <div class="col-2">
+        <div class="card p-2">
+          <img src="images/Prussian Carp.jpg" class="card-img-top product-img">
+          <div class="card-body text-center">
+            <h5 class="card-title">Prussian Carp</h5>
+            <p>RM <span class="unit-price">40</span>/1kg</p>
+            <div class="mb-2">⭐⭐⭐⭐⭐</div>
+
+
+            <!-- Customization Options -->
+            <div class="mb-3 customize">
+              <label class="form-label">Quantity:</label>
+              <div class="d-flex justify-content-center align-items-center mb-2">
+                <button class="btn btn-secondary btn-sm me-2 btn-dec" type="button">-</button>
+                <span class="qty">1</span>
+                <button class="btn btn-secondary btn-sm ms-2 btn-inc" type="button">+</button>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input remove-scales" type="checkbox">
+                <label class="form-check-label">Remove scales</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input remove-insides" type="checkbox">
+                <label class="form-check-label">Remove insides</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input remove-head" type="checkbox">
+                <label class="form-check-label">Remove head</label>
+              </div>
+            </div>
+
+            <!-- Add to Cart -->
+            <button class="btn btn-primary w-100 btn-add"
+                    data-id="Prussian Carp"
+                    data-name="Prussian Carp"
+                    data-price="40"
+                    data-img="images/Prussian Carp.jpg">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- …other products -->
+   <div class="col-2">
+        <div class="card p-2">
+          <img src="images/smoke carp.jpeg" class="card-img-top product-img">
+          <div class="card-body text-center">
+            <h5 class="card-title">Smoke Carp</h5>
+            <p>RM <span class="unit-price">40</span>/1kg</p>
+            <div class="mb-2">⭐⭐⭐⭐⭐</div>
+
+            <!-- Customization Options -->
+            <div class="mb-3 customize">
+              <label class="form-label">Quantity:</label>
+              <div class="d-flex justify-content-center align-items-center mb-2">
+                <button class="btn btn-secondary btn-sm me-2 btn-dec" type="button">-</button>
+                <span class="qty">1</span>
+                <button class="btn btn-secondary btn-sm ms-2 btn-inc" type="button">+</button>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input remove-scales" type="checkbox">
+                <label class="form-check-label">Remove scales</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input remove-insides" type="checkbox">
+                <label class="form-check-label">Remove insides</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input remove-head" type="checkbox">
+                <label class="form-check-label">Remove head</label>
+              </div>
+            </div>
+
+            <!-- Add to Cart -->
+            <button class="btn btn-primary w-100 btn-add"
+                    data-id="Smoke Carp"
+                    data-name="Smoke Carp"
+                    data-price="40"
+                    data-img="images/smoke carp.jpeg">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="card p-2">
+          <img src="images/salmon.jpg" class="card-img-top product-img">
+          <div class="card-body text-center">
+            <h5 class="card-title">Salmon</h5>
+            <p>RM <span class="unit-price">63</span>/1kg</p>
+            <div class="mb-2">⭐⭐⭐⭐⭐</div>
+
+            <!-- Customization Options -->
+            <div class="mb-3 customize">
+              <label class="form-label">Quantity:</label>
+              <div class="d-flex justify-content-center align-items-center mb-2">
+                <button class="btn btn-secondary btn-sm me-2 btn-dec" type="button">-</button>
+                <span class="qty">1</span>
+                <button class="btn btn-secondary btn-sm ms-2 btn-inc" type="button">+</button>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input remove-scales" type="checkbox">
+                <label class="form-check-label">Remove scales</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input remove-insides" type="checkbox">
+                <label class="form-check-label">Remove insides</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input remove-head" type="checkbox">
+                <label class="form-check-label">Remove head</label>
+              </div>
+            </div>
+
+            <!-- Add to Cart -->
+            <button class="btn btn-primary w-100 btn-add"
+                    data-id="Salmon"
+                    data-name="Salmon"
+                    data-price="63"
+                    data-img="images/salmon.jpg">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    <div class="col-2">
+        <div class="card p-2">
+          <img src="images/Sea Bass.jpg" class="card-img-top product-img">
+          <div class="card-body text-center">
+            <h5 class="card-title">Sea Bass</h5>
+            <p>RM <span class="unit-price">38</span>/1kg</p>
+            <div class="mb-2">⭐⭐⭐⭐⭐</div>
+
+            <!-- Customization Options -->
+            <div class="mb-3 customize">
+              <label class="form-label">Quantity:</label>
+              <div class="d-flex justify-content-center align-items-center mb-2">
+                <button class="btn btn-secondary btn-sm me-2 btn-dec" type="button">-</button>
+                <span class="qty">1</span>
+                <button class="btn btn-secondary btn-sm ms-2 btn-inc" type="button">+</button>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input remove-scales" type="checkbox">
+                <label class="form-check-label">Remove scales</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input remove-insides" type="checkbox">
+                <label class="form-check-label">Remove insides</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input remove-head" type="checkbox">
+                <label class="form-check-label">Remove head</label>
+              </div>
+            </div>
+
+            <!-- Add to Cart -->
+            <button class="btn btn-primary w-100 btn-add"
+                    data-id="Sea Bass"
+                    data-name="Sea Bass"
+                    data-price="38"
+                    data-img="images/Sea Bass.jpg">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="card p-2">
+          <img src="images/Tilapia.jpg" class="card-img-top product-img">
+          <div class="card-body text-center">
+            <h5 class="card-title">Tilapia</h5>
+            <p>RM <span class="unit-price">20</span>/1kg</p>
+            <div class="mb-2">⭐⭐⭐⭐⭐</div>
+
+            <!-- Customization Options -->
+            <div class="mb-3 customize">
+              <label class="form-label">Quantity:</label>
+              <div class="d-flex justify-content-center align-items-center mb-2">
+                <button class="btn btn-secondary btn-sm me-2 btn-dec" type="button">-</button>
+                <span class="qty">1</span>
+                <button class="btn btn-secondary btn-sm ms-2 btn-inc" type="button">+</button>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input remove-scales" type="checkbox">
+                <label class="form-check-label">Remove scales</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input remove-insides" type="checkbox">
+                <label class="form-check-label">Remove insides</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input remove-head" type="checkbox">
+                <label class="form-check-label">Remove head</label>
+              </div>
+            </div>
+            
+
+            <!-- Add to Cart -->
+            <button class="btn btn-primary w-100 btn-add"
+                    data-id="Tilapia"
+                    data-name="Tilapia"
+                    data-price="20"
+                    data-img="images/Tilapia.jpg">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+              <div class="col-2">
+        <div class="card p-2">
+          <img src="images/Cod.jpeg" class="card-img-top product-img">
+          <div class="card-body text-center">
+            <h5 class="card-title">Cod</h5>
+            <p>RM <span class="unit-price">220</span>/1kg</p>
+            <div class="mb-2">⭐⭐⭐⭐⭐</div>
+
+
+            <!-- Customization Options -->
+            <div class="mb-3 customize">
+              <label class="form-label">Quantity:</label>
+              <div class="d-flex justify-content-center align-items-center mb-2">
+                <button class="btn btn-secondary btn-sm me-2 btn-dec" type="button">-</button>
+                <span class="qty">1</span>
+                <button class="btn btn-secondary btn-sm ms-2 btn-inc" type="button">+</button>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input remove-scales" type="checkbox">
+                <label class="form-check-label">Remove scales</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input remove-insides" type="checkbox">
+                <label class="form-check-label">Remove insides</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input remove-head" type="checkbox">
+                <label class="form-check-label">Remove head</label>
+              </div>
+            </div>
+
+            <!-- Add to Cart -->
+            <button class="btn btn-primary w-100 btn-add"
+                    data-id="Cod"
+                    data-name="Cod"
+                    data-price="220"
+                    data-img="images/Cod.jpeg">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+              <div class="col-2">
+        <div class="card p-2">
+          <img src="images/Catfish.jpg" class="card-img-top product-img">
+          <div class="card-body text-center">
+            <h5 class="card-title">Catfish</h5>
+            <p>RM <span class="unit-price">12</span>/1kg</p>
+            <div class="mb-2">⭐⭐⭐⭐⭐</div>
+
+
+            <!-- Customization Options -->
+            <div class="mb-3 customize">
+              <label class="form-label">Quantity:</label>
+              <div class="d-flex justify-content-center align-items-center mb-2">
+                <button class="btn btn-secondary btn-sm me-2 btn-dec" type="button">-</button>
+                <span class="qty">1</span>
+                <button class="btn btn-secondary btn-sm ms-2 btn-inc" type="button">+</button>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input remove-scales" type="checkbox">
+                <label class="form-check-label">Remove scales</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input remove-insides" type="checkbox">
+                <label class="form-check-label">Remove insides</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input remove-head" type="checkbox">
+                <label class="form-check-label">Remove head</label>
+              </div>
+            </div>
+
+            <!-- Add to Cart -->
+            <button class="btn btn-primary w-100 btn-add"
+                    data-id="Catfish"
+                    data-name="Catfish"
+                    data-price="12"
+                    data-img="images/Catfish.jpg">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+              <div class="col-2">
+        <div class="card p-2">
+          <img src="images/Grouper.jpg" class="card-img-top product-img">
+          <div class="card-body text-center">
+            <h5 class="card-title">Grouper</h5>
+            <p>RM <span class="unit-price">55</span>/1kg</p>
+            <div class="mb-2">⭐⭐⭐⭐⭐</div>
+
+
+            <!-- Customization Options -->
+            <div class="mb-3 customize">
+              <label class="form-label">Quantity:</label>
+              <div class="d-flex justify-content-center align-items-center mb-2">
+                <button class="btn btn-secondary btn-sm me-2 btn-dec" type="button">-</button>
+                <span class="qty">1</span>
+                <button class="btn btn-secondary btn-sm ms-2 btn-inc" type="button">+</button>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input remove-scales" type="checkbox">
+                <label class="form-check-label">Remove scales</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input remove-insides" type="checkbox">
+                <label class="form-check-label">Remove insides</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input remove-head" type="checkbox">
+                <label class="form-check-label">Remove head</label>
+              </div>
+            </div>
+
+            <!-- Add to Cart -->
+            <button class="btn btn-primary w-100 btn-add"
+                    data-id="Grouper"
+                    data-name="v"
+                    data-price="55"
+                    data-img="images/Grouper.jpg">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+              <div class="col-2">
+        <div class="card p-2">
+          <img src="images/Tuna.jpeg" class="card-img-top product-img">
+          <div class="card-body text-center">
+            <h5 class="card-title">Tuna</h5>
+            <p>RM <span class="unit-price">439</span>/1kg</p>
+            <div class="mb-2">⭐⭐⭐⭐⭐</div>
+
+
+            <!-- Customization Options -->
+            <div class="mb-3 customize">
+              <label class="form-label">Quantity:</label>
+              <div class="d-flex justify-content-center align-items-center mb-2">
+                <button class="btn btn-secondary btn-sm me-2 btn-dec" type="button">-</button>
+                <span class="qty">1</span>
+                <button class="btn btn-secondary btn-sm ms-2 btn-inc" type="button">+</button>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input remove-scales" type="checkbox">
+                <label class="form-check-label">Remove scales</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input remove-insides" type="checkbox">
+                <label class="form-check-label">Remove insides</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input remove-head" type="checkbox">
+                <label class="form-check-label">Remove head</label>
+              </div>
+            </div>
+
+            <!-- Add to Cart -->
+            <button class="btn btn-primary w-100 btn-add"
+                    data-id="Tuna"
+                    data-name="Tuna"
+                    data-price="439"
+                    data-img="images/Tuna.jpeg">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+              <div class="col-2">
+        <div class="card p-2">
+          <img src="images/Mackerel.jpg" class="card-img-top product-img">
+          <div class="card-body text-center">
+            <h5 class="card-title">Mackerel</h5>
+            <p>RM <span class="unit-price">15</span>/1kg</p>
+            <div class="mb-2">⭐⭐⭐⭐⭐</div>
+
+
+            <!-- Customization Options -->
+            <div class="mb-3 customize">
+              <label class="form-label">Quantity:</label>
+              <div class="d-flex justify-content-center align-items-center mb-2">
+                <button class="btn btn-secondary btn-sm me-2 btn-dec" type="button">-</button>
+                <span class="qty">1</span>
+                <button class="btn btn-secondary btn-sm ms-2 btn-inc" type="button">+</button>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input remove-scales" type="checkbox">
+                <label class="form-check-label">Remove scales</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input remove-insides" type="checkbox">
+                <label class="form-check-label">Remove insides</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input remove-head" type="checkbox">
+                <label class="form-check-label">Remove head</label>
+              </div>
+            </div>
+
+            <!-- Add to Cart -->
+            <button class="btn btn-primary w-100 btn-add"
+                    data-id="Mackerel"
+                    data-name="Mackerel"
+                    data-price="15"
+                    data-img="images/Mackerel.jpg">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+              <div class="col-2">
+        <div class="card p-2">
+          <img src="images/trout.png" class="card-img-top product-img">
+          <div class="card-body text-center">
+            <h5 class="card-title">Trout</h5>
+            <p>RM <span class="unit-price">46</span>/1kg</p>
+            <div class="mb-2">⭐⭐⭐⭐⭐</div>
+
+
+            <!-- Customization Options -->
+            <div class="mb-3 customize">
+              <label class="form-label">Quantity:</label>
+              <div class="d-flex justify-content-center align-items-center mb-2">
+                <button class="btn btn-secondary btn-sm me-2 btn-dec" type="button">-</button>
+                <span class="qty">1</span>
+                <button class="btn btn-secondary btn-sm ms-2 btn-inc" type="button">+</button>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input remove-scales" type="checkbox">
+                <label class="form-check-label">Remove scales</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input remove-insides" type="checkbox">
+                <label class="form-check-label">Remove insides</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input remove-head" type="checkbox">
+                <label class="form-check-label">Remove head</label>
+              </div>
+            </div>
+
+            <!-- Add to Cart -->
+            <button class="btn btn-primary w-100 btn-add"
+                    data-id="Trout"
+                    data-name="Trout"
+                    data-price="46"
+                    data-img="images/trout.png">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+              <div class="col-2">
+        <div class="card p-2">
+          <img src="images/Sardines.jpg" class="card-img-top product-img">
+          <div class="card-body text-center">
+            <h5 class="card-title">Sardines</h5>
+            <p>RM <span class="unit-price">15</span>/1kg</p>
+            <div class="mb-2">⭐⭐⭐⭐⭐</div>
+
+
+            <!-- Customization Options -->
+            <div class="mb-3 customize">
+              <label class="form-label">Quantity:</label>
+              <div class="d-flex justify-content-center align-items-center mb-2">
+                <button class="btn btn-secondary btn-sm me-2 btn-dec" type="button">-</button>
+                <span class="qty">1</span>
+                <button class="btn btn-secondary btn-sm ms-2 btn-inc" type="button">+</button>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input remove-scales" type="checkbox">
+                <label class="form-check-label">Remove scales</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input remove-insides" type="checkbox">
+                <label class="form-check-label">Remove insides</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input remove-head" type="checkbox">
+                <label class="form-check-label">Remove head</label>
+              </div>
+            </div>
+
+            <!-- Add to Cart -->
+            <button class="btn btn-primary w-100 btn-add"
+                    data-id="Sardines"
+                    data-name="Sardines"
+                    data-price="15"
+                    data-img="images/Sardines.jpg">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</section>
+
+  <!-- Scripts -->
+     <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const getCart = () => JSON.parse(localStorage.getItem('cart')||'[]');
+    const saveCart = cart => localStorage.setItem('cart', JSON.stringify(cart));
+
+    document.querySelectorAll('.card').forEach(card=>{
+      const dec = card.querySelector('.btn-dec');
+      const inc = card.querySelector('.btn-inc');
+      const qtyEl = card.querySelector('.qty');
+      dec.addEventListener('click', ()=>{ let v = parseInt(qtyEl.textContent); if(v>1) qtyEl.textContent = v-1; });
+      inc.addEventListener('click', ()=>{ let v = parseInt(qtyEl.textContent); qtyEl.textContent = v+1; });
+
+      const btn = card.querySelector('.btn-add');
+      btn.addEventListener('click', ()=>{
+        const id = btn.dataset.id;
+        const name = btn.dataset.name;
+        const price = parseFloat(btn.dataset.price);
+        const img = btn.dataset.img;
+        const qty = parseInt(qtyEl.textContent);
+        const options = {
+          scales: card.querySelector('.remove-scales').checked,
+          insides: card.querySelector('.remove-insides').checked,
+          head: card.querySelector('.remove-head').checked
+        };
+        let cart = getCart();
+        // merge if exists
+        const existing = cart.find(i=>i.id===id && JSON.stringify(i.options)===JSON.stringify(options));
+        if(existing){ existing.qty += qty; }
+        else { cart.push({id, name, price, img, qty, options}); }
+        saveCart(cart);
+        alert(`${name} (x${qty}) added to cart`);
+      });
+    });
+  });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="shop.js"></script>
+  <div class="container-xl"></div>
+</body>
+</html>
